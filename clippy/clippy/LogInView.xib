@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInVC" customModule="clippy" customModuleProvider="target">
+            <connections>
+                <outlet property="logInBtn" destination="34q-1f-AgA" id="Be5-uI-QWL"/>
+                <outlet property="passwordField" destination="hla-D6-zsa" id="Lu0-GZ-s2j"/>
+                <outlet property="usernameField" destination="w8G-x4-lgE" id="oXJ-4f-wbh"/>
+                <outlet property="view" destination="iN0-l3-epB" id="WGI-fn-Zi0"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Clippy!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="al3-ry-06w">
+                    <rect key="frame" x="101.5" y="36" width="172" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w8G-x4-lgE">
+                    <rect key="frame" x="80" y="286.5" width="215" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hla-D6-zsa">
+                    <rect key="frame" x="80" y="328.5" width="215" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34q-1f-AgA">
+                    <rect key="frame" x="80" y="382.5" width="215" height="30"/>
+                    <state key="normal" title="Log In"/>
+                    <connections>
+                        <action selector="tappedLogIn" destination="-1" eventType="touchUpInside" id="3C2-Z1-JOy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hla-D6-zsa" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="36H-nk-d8K"/>
+                <constraint firstItem="34q-1f-AgA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6oH-EW-jNX"/>
+                <constraint firstItem="w8G-x4-lgE" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="8pC-uJ-Rab"/>
+                <constraint firstItem="w8G-x4-lgE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="AeR-FY-LOQ"/>
+                <constraint firstItem="al3-ry-06w" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Dq8-kS-WOc"/>
+                <constraint firstItem="hla-D6-zsa" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="HBW-2K-xbg"/>
+                <constraint firstItem="al3-ry-06w" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="KaG-Ig-jIm"/>
+                <constraint firstItem="34q-1f-AgA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="bFy-p8-B6r"/>
+                <constraint firstItem="hla-D6-zsa" firstAttribute="top" secondItem="w8G-x4-lgE" secondAttribute="bottom" constant="12" id="hlm-vR-CPd"/>
+                <constraint firstItem="hla-D6-zsa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="kQv-5j-vAo"/>
+                <constraint firstItem="34q-1f-AgA" firstAttribute="top" secondItem="hla-D6-zsa" secondAttribute="bottom" constant="24" id="sB6-O4-ZJh"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+        </view>
+    </objects>
+</document>
