@@ -19,6 +19,8 @@ class LogInVC: UIViewController {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         usernameField.placeholder = "Username"
         passwordField.placeholder = "Password"
         
@@ -29,6 +31,7 @@ class LogInVC: UIViewController {
     
     @IBAction func tappedLogIn() {
         print("ive written so many of these funcs i never want to do this professionally")
+        self.navigationController?.present(MainVC(nibName: "MainView", bundle: nil) , animated: true, completion: nil)
     }
     
 }

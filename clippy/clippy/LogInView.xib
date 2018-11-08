@@ -12,10 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogInVC" customModule="clippy" customModuleProvider="target">
             <connections>
-                <outlet property="logInBtn" destination="34q-1f-AgA" id="Be5-uI-QWL"/>
-                <outlet property="passwordField" destination="hla-D6-zsa" id="Lu0-GZ-s2j"/>
-                <outlet property="usernameField" destination="w8G-x4-lgE" id="oXJ-4f-wbh"/>
-                <outlet property="view" destination="iN0-l3-epB" id="WGI-fn-Zi0"/>
+                <outlet property="logInBtn" destination="34q-1f-AgA" id="y7i-Og-Djx"/>
+                <outlet property="passwordField" destination="hla-D6-zsa" id="27t-vm-uGd"/>
+                <outlet property="usernameField" destination="w8G-x4-lgE" id="46p-uu-Eqf"/>
+                <outlet property="view" destination="iN0-l3-epB" id="VNH-Mh-ZcL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -45,7 +45,7 @@
                     <rect key="frame" x="80" y="382.5" width="215" height="30"/>
                     <state key="normal" title="Log In"/>
                     <connections>
-                        <action selector="tappedLogIn" destination="-1" eventType="touchUpInside" id="3C2-Z1-JOy"/>
+                        <action selector="tappedLogIn" destination="-1" eventType="touchUpInside" id="gEs-hj-cDD"/>
                     </connections>
                 </button>
             </subviews>
