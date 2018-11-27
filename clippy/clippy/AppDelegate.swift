@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        window!.rootViewController = UINavigationController(rootViewController: LogInVC.init(nibName: "LogInView", bundle: nil))// MainVC()
+        window!.rootViewController = UINavigationController(rootViewController: LogInVC(nibName: "LogInView", bundle: nil))// MainVC()
         window!.makeKeyAndVisible()
         
         return true

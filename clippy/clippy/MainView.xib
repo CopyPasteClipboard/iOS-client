@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainVC" customModule="clippy" customModuleProvider="target">
             <connections>
-                <outlet property="currentView" destination="iwB-Zf-qZE" id="20H-1x-5Yt"/>
                 <outlet property="tableView" destination="tmP-QQ-3e4" id="T1o-Ra-4w2"/>
                 <outlet property="view" destination="iN0-l3-epB" id="y0N-bB-dGQ"/>
             </connections>
@@ -22,13 +21,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iwB-Zf-qZE">
-                    <rect key="frame" x="64" y="81" width="247" height="29"/>
-                    <segments>
-                        <segment title="Clipboard"/>
-                        <segment title="Add content"/>
-                    </segments>
-                </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP1-Mb-OAP">
                     <rect key="frame" x="142" y="36" width="91.5" height="21"/>
                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
@@ -36,13 +28,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tmP-QQ-3e4">
-                    <rect key="frame" x="0.0" y="133" width="375" height="534"/>
+                    <rect key="frame" x="0.0" y="81" width="375" height="586"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6sU-Rd-zue"/>
                         <outlet property="delegate" destination="-1" id="UXB-Ie-hdP"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lns-qE-N2t">
+                    <rect key="frame" x="337" y="36" width="22" height="22"/>
+                    <connections>
+                        <action selector="tappedAddBoard" destination="-1" eventType="touchUpInside" id="wCa-Ss-Hng"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -51,10 +49,9 @@
                 <constraint firstAttribute="bottom" secondItem="tmP-QQ-3e4" secondAttribute="bottom" id="7jC-aP-N4w"/>
                 <constraint firstItem="YP1-Mb-OAP" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Jf1-8K-VlJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tmP-QQ-3e4" secondAttribute="trailing" id="LHs-SZ-khm"/>
-                <constraint firstItem="iwB-Zf-qZE" firstAttribute="top" secondItem="YP1-Mb-OAP" secondAttribute="bottom" constant="24" id="baw-EQ-EEK"/>
-                <constraint firstItem="tmP-QQ-3e4" firstAttribute="top" secondItem="iwB-Zf-qZE" secondAttribute="bottom" constant="24" id="kdq-Fr-f5m"/>
-                <constraint firstItem="iwB-Zf-qZE" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="klb-Kb-Qf5"/>
-                <constraint firstItem="iwB-Zf-qZE" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="64" id="mQ7-j8-F2k"/>
+                <constraint firstItem="lns-qE-N2t" firstAttribute="centerY" secondItem="YP1-Mb-OAP" secondAttribute="centerY" id="RDQ-tL-WUw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lns-qE-N2t" secondAttribute="trailing" constant="16" id="ZtP-rO-9sV"/>
+                <constraint firstItem="tmP-QQ-3e4" firstAttribute="top" secondItem="YP1-Mb-OAP" secondAttribute="bottom" constant="24" id="cjO-V3-UXj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

@@ -11,26 +11,37 @@ import UIKit
 
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    //i think im being stupid. ill probably extract this into its own view
-    //ALSO WHY DID I CALL IT A VIEW
-    //its 1am and im mindlessly throwing this up instead of studying for my ai test tomorrow
-    //ive slept like 5 hrs a night for about 6 months
-    @IBOutlet weak var currentView: UISegmentedControl!
+    
     
     @IBOutlet weak var tableView: UITableView!
     
+    var boards = [Board]()
+    
     override func viewDidLoad() {
-        
+        Requests.getUserBoards(user_id: 0) { (boards) in
+            if let boards = boards {
+                self.boards = boards
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return boards.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
+    
+    @IBAction func tappedAddBoard() {
+        let view = AddBoardVC(nibName: "AddBoardVC", bundle: nil)
+        self.navigationController?.present(view, animated: true, completion: nil)
+    }
+    
     
     
     
