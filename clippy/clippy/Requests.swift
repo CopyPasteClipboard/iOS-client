@@ -12,11 +12,11 @@ import UIKit
 
 class Requests {
     
-    static let baseUrl = URL(string: "http://34.224.86.78:8080/v1")!
+    static let baseUrl = URL(string: "http://34.224.86.78:8080/")!
     
     static func getUserById(id: Int, completion: @escaping (User?) -> Void) {
         
-        URLSession.shared.dataTask(with: URL(string: "/users/\(id)", relativeTo: baseUrl)!) { (data, response, error) in
+        URLSession.shared.dataTask(with: URL(string: "/v1/user/\(id)", relativeTo: baseUrl)!) { (data, response, error) in
             if let data = data, let user = try? JSONDecoder().decode(User.self, from: data) {
                 completion(user)
             } else {
@@ -28,7 +28,7 @@ class Requests {
     
     static func getUserBoards(user_id: Int, completion: @escaping ([Board]?) -> Void) {
         
-        URLSession.shared.dataTask(with: URL(string: "/users/\(user_id)/clipboards", relativeTo: baseUrl)!) { (data, response, error) in
+        URLSession.shared.dataTask(with: URL(string: "/v1/user/\(user_id)/clipboards", relativeTo: baseUrl)!) { (data, response, error) in
             if let data = data, let boards = try? JSONDecoder().decode([Board].self, from: data) {
                 completion(boards)
             } else {
@@ -39,7 +39,7 @@ class Requests {
     }
     
     static func getBoardItems(board_id: Int, completion: @escaping ([Item]?) -> Void) {
-        URLSession.shared.dataTask(with: URL(string: "/users/\(board_id)/clipboards", relativeTo: baseUrl)!) { (data, response, error) in
+        URLSession.shared.dataTask(with: URL(string: "/v1/user/\(board_id)/clipboards", relativeTo: baseUrl)!) { (data, response, error) in
             if let data = data, let items = try? JSONDecoder().decode([Item].self, from: data) {
                 completion(items)
             } else {
@@ -49,7 +49,7 @@ class Requests {
     }
     
     static func getLastBoardItem(board_id: Int, completion: @escaping (Item?) -> Void) {
-        URLSession.shared.dataTask(with: URL(string: "/clipboard/\(board_id)", relativeTo: baseUrl)!) { (data, response, error) in
+        URLSession.shared.dataTask(with: URL(string: "/v1/clipboard/\(board_id)", relativeTo: baseUrl)!) { (data, response, error) in
             if let data = data, let item = try? JSONDecoder().decode(Item.self, from: data) {
                 completion(item)
             } else {
@@ -59,7 +59,7 @@ class Requests {
     }
     
     static func postNewBoardItem(board_id: Int, text: String, completion: @escaping (Item?) -> Void) {
-        var request = URLRequest(url: URL(string: "/clipboard/\(board_id)/boarditem", relativeTo: baseUrl)!)
+        var request = URLRequest(url: URL(string: "/v1/clipboard/\(board_id)/boarditem", relativeTo: baseUrl)!)
         
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
