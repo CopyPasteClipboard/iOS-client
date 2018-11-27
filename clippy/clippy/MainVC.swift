@@ -37,6 +37,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let view = BoardItemsVC(nibName: "BoardItems", bundle: nil)
+        view.board = boards[indexPath.row]
+        self.navigationController?.pushViewController(view, animated: true)
+    }
+    
     @IBAction func tappedAddBoard() {
         let view = AddBoardVC(nibName: "AddBoardVC", bundle: nil)
         self.navigationController?.present(view, animated: true, completion: nil)
