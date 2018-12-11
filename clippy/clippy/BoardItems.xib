@@ -30,6 +30,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7An-Jb-LkC">
                     <rect key="frame" x="0.0" y="82" width="375" height="585"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="xpZ-AV-2Ux"/>
+                        <outlet property="delegate" destination="-1" id="hyC-w2-iTt"/>
+                    </connections>
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhu-3J-OAc">
                     <rect key="frame" x="337" y="36" width="22" height="22"/>
@@ -37,17 +41,35 @@
                         <action selector="tappedAdd" destination="-1" eventType="touchUpInside" id="cS0-2v-NdU"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-SW-8oI">
+                    <rect key="frame" x="16" y="32" width="34" height="30"/>
+                    <state key="normal" title="Back"/>
+                    <connections>
+                        <action selector="tappedBack" destination="-1" eventType="touchUpInside" id="M6f-qS-lZh"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jkk-bc-dnN">
+                    <rect key="frame" x="282" y="32" width="49" height="30"/>
+                    <state key="normal" title="refresh"/>
+                    <connections>
+                        <action selector="refresh" destination="-1" eventType="touchUpInside" id="EF5-pQ-jgX"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dF0-Cd-SNZ" firstAttribute="trailing" secondItem="fhu-3J-OAc" secondAttribute="trailing" constant="16" id="2vp-99-cnZ"/>
+                <constraint firstItem="fhu-3J-OAc" firstAttribute="leading" secondItem="jkk-bc-dnN" secondAttribute="trailing" constant="6" id="6C3-YI-f56"/>
                 <constraint firstItem="fhu-3J-OAc" firstAttribute="centerY" secondItem="2NK-I3-eVb" secondAttribute="centerY" id="Mf9-5m-Mw8"/>
                 <constraint firstItem="7An-Jb-LkC" firstAttribute="top" secondItem="2NK-I3-eVb" secondAttribute="bottom" constant="24" id="Mqc-QQ-Qhu"/>
+                <constraint firstItem="CdY-SW-8oI" firstAttribute="centerY" secondItem="2NK-I3-eVb" secondAttribute="centerY" id="NHx-hh-86v"/>
                 <constraint firstItem="7An-Jb-LkC" firstAttribute="leading" secondItem="dF0-Cd-SNZ" secondAttribute="leading" id="RCX-GZ-HdB"/>
+                <constraint firstItem="CdY-SW-8oI" firstAttribute="leading" secondItem="dF0-Cd-SNZ" secondAttribute="leading" constant="16" id="T4J-Nu-Pws"/>
                 <constraint firstItem="dF0-Cd-SNZ" firstAttribute="trailing" secondItem="7An-Jb-LkC" secondAttribute="trailing" id="b6o-RG-DK1"/>
                 <constraint firstAttribute="bottom" secondItem="7An-Jb-LkC" secondAttribute="bottom" id="fAO-p1-9Qv"/>
                 <constraint firstItem="2NK-I3-eVb" firstAttribute="top" secondItem="dF0-Cd-SNZ" secondAttribute="top" constant="16" id="loC-tm-Gqa"/>
                 <constraint firstItem="2NK-I3-eVb" firstAttribute="centerX" secondItem="dF0-Cd-SNZ" secondAttribute="centerX" id="o3b-By-KlM"/>
+                <constraint firstItem="jkk-bc-dnN" firstAttribute="centerY" secondItem="fhu-3J-OAc" secondAttribute="centerY" id="sai-lk-Ylu"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="dF0-Cd-SNZ"/>
         </view>

@@ -16,9 +16,22 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var boards = [Board]()
+    var objProtocol: NSObjectProtocol!
     
     override func viewDidLoad() {
-        Requests.getUserBoards(user_id: 0) { (boards) in
+        loadData()
+        
+        objProtocol = NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: "newBoard"), object: nil, queue: nil, using: { (notification) in
+            self.loadData()
+        })
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(objProtocol)
+    }
+    
+    func loadData() {
+        Requests.getUserBoards { (boards) in
             if let boards = boards {
                 self.boards = boards
                 DispatchQueue.main.async {
@@ -34,7 +47,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "MainVCCell")
+        cell.textLabel?.text = boards[indexPath.row].board_name
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -46,7 +61,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func tappedAddBoard() {
-        let view = AddBoardVC(nibName: "AddBoardVC", bundle: nil)
+        let view = AddBoardVC(nibName: "AddBoardView", bundle: nil)
         self.navigationController?.present(view, animated: true, completion: nil)
     }
     

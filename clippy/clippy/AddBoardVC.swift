@@ -14,15 +14,20 @@ class AddBoardVC: UIViewController {
     @IBOutlet weak var textField: UITextField!
     
     @IBAction func tappedDismiss() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tappedSave() {
-//        Requests.postNewBoardItem(board_id: <#T##Int#>, text: <#T##String#>) { (item) in
-//            DispatchQueue.main.async {
-//                self.navigationController?.dismiss(animated: true, completion: nil)
-//            }
-//        }
+        
+        Requests.createUserBoard(board_name: (textField.text ?? "").trimmingCharacters(in: .whitespaces)) { (board) in
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+                
+                if board != nil {
+                    NotificationCenter.default.post(name: NSNotification.Name("newBoard"), object: nil)
+                }
+            }
+        }
     }
     
     

@@ -9,7 +9,9 @@
 import Foundation
 
 struct User: Decodable {
-    let id: Int!
+    static var user: User!
+    
+    let id: Int
     let username: String!
 }
 

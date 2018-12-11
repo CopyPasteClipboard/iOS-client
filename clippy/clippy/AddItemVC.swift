@@ -16,14 +16,17 @@ class AddItemVC: UIViewController {
     var board: Board!
     
     @IBAction func tappedDismiss() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func tappedSave() {
         Requests.postNewBoardItem(board_id: board.id, text: textField.text ?? "") { (item) in
-            print(item)
             DispatchQueue.main.async {
-                self.navigationController?.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true, completion: nil)
+                
+                if item != nil {
+                    NotificationCenter.default.post(name: NSNotification.Name("newItem"), object: nil)
+                }
             }
         }
     }

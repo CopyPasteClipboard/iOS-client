@@ -30,8 +30,15 @@ class LogInVC: UIViewController {
     }
     
     @IBAction func tappedLogIn() {
-        print("ive written so many of these funcs i never want to do this professionally")
-        self.navigationController?.present(MainVC(nibName: "MainView", bundle: nil) , animated: true, completion: nil)
+        Requests.login(username: "bruce@skoller.co") { (user) in
+            if user != nil {
+                DispatchQueue.main.async {
+                    let nav = UINavigationController(rootViewController: MainVC(nibName: "MainView", bundle: nil))
+                    nav.isNavigationBarHidden = true
+                    self.navigationController?.present(nav, animated: true, completion: nil)
+                }
+            }
+        }
     }
     
 }
