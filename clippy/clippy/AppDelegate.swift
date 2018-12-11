@@ -18,8 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        
-        window!.rootViewController = UINavigationController(rootViewController: LogInVC(nibName: "LogInView", bundle: nil))// MainVC()
+        window!.rootViewController = UINavigationController(rootViewController: LogInVC(nibName: "LogInView", bundle: nil))
         window!.makeKeyAndVisible()
         
         return true

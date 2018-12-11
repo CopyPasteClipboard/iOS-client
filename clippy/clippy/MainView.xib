@@ -41,6 +41,13 @@
                         <action selector="tappedAddBoard" destination="-1" eventType="touchUpInside" id="wCa-Ss-Hng"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OY3-c0-C8P">
+                    <rect key="frame" x="16" y="32" width="48" height="30"/>
+                    <state key="normal" title="Logout"/>
+                    <connections>
+                        <action selector="tappedLogout" destination="-1" eventType="touchUpInside" id="LNT-Xq-HdZ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -49,9 +56,11 @@
                 <constraint firstAttribute="bottom" secondItem="tmP-QQ-3e4" secondAttribute="bottom" id="7jC-aP-N4w"/>
                 <constraint firstItem="YP1-Mb-OAP" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="Jf1-8K-VlJ"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tmP-QQ-3e4" secondAttribute="trailing" id="LHs-SZ-khm"/>
+                <constraint firstItem="OY3-c0-C8P" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="QNh-lc-fVe"/>
                 <constraint firstItem="lns-qE-N2t" firstAttribute="centerY" secondItem="YP1-Mb-OAP" secondAttribute="centerY" id="RDQ-tL-WUw"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="lns-qE-N2t" secondAttribute="trailing" constant="16" id="ZtP-rO-9sV"/>
                 <constraint firstItem="tmP-QQ-3e4" firstAttribute="top" secondItem="YP1-Mb-OAP" secondAttribute="bottom" constant="24" id="cjO-V3-UXj"/>
+                <constraint firstItem="OY3-c0-C8P" firstAttribute="centerY" secondItem="YP1-Mb-OAP" secondAttribute="centerY" id="xAv-T8-lfC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

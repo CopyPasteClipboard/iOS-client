@@ -122,6 +122,7 @@ class Requests {
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data, let user = try? JSONDecoder().decode(User.self, from: data) {
+                User.user = user
                 completion(user)
             } else {
                 completion(nil)

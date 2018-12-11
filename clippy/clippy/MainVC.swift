@@ -65,6 +65,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.present(view, animated: true, completion: nil)
     }
     
+    @IBAction func tappedLogout() {
+        UserDefaults.standard.removeObject(forKey: "username")
+        (UIApplication.shared.delegate as! AppDelegate).window!.rootViewController = UINavigationController(rootViewController: LogInVC(nibName: "LogInView", bundle: nil))
+        
+    }
+    
     
     
     

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpVC" customModule="clippy" customModuleProvider="target">
+            <connections>
+                <outlet property="passwordField" destination="gaD-65-KOj" id="9xB-uq-bpn"/>
+                <outlet property="phoneNumberField" destination="LLg-vO-rkz" id="BbN-j0-hbz"/>
+                <outlet property="signUpBtn" destination="hJd-Af-9uk" id="uto-by-1nk"/>
+                <outlet property="usernameField" destination="gFL-ip-06M" id="Nks-hW-yaB"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ygk-gg-rAh"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LLg-vO-rkz">
+                    <rect key="frame" x="80" y="257" width="215" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-ip-06M">
+                    <rect key="frame" x="80" y="165" width="215" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJd-Af-9uk">
+                    <rect key="frame" x="80" y="310" width="215" height="30"/>
+                    <state key="normal" title="Sign Up"/>
+                    <connections>
+                        <action selector="tappedSignUp" destination="-1" eventType="touchUpInside" id="K7U-el-iTA"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gaD-65-KOj">
+                    <rect key="frame" x="80" y="211" width="215" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="LLg-vO-rkz" firstAttribute="top" secondItem="gaD-65-KOj" secondAttribute="bottom" constant="16" id="36K-0X-cJN"/>
+                <constraint firstItem="LLg-vO-rkz" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="FJG-IP-iNq"/>
+                <constraint firstItem="LLg-vO-rkz" firstAttribute="leading" secondItem="gFL-ip-06M" secondAttribute="leading" id="H5m-Rg-idR"/>
+                <constraint firstItem="gFL-ip-06M" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="JY4-An-wee"/>
+                <constraint firstItem="hJd-Af-9uk" firstAttribute="top" secondItem="LLg-vO-rkz" secondAttribute="bottom" constant="23" id="KbE-uy-2Or"/>
+                <constraint firstItem="gaD-65-KOj" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="UeU-HP-g9W"/>
+                <constraint firstItem="gFL-ip-06M" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="80" id="aNS-YZ-3gA"/>
+                <constraint firstItem="gaD-65-KOj" firstAttribute="leading" secondItem="gFL-ip-06M" secondAttribute="leading" id="bJN-wF-PvV"/>
+                <constraint firstItem="hJd-Af-9uk" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="dLw-hr-1hV"/>
+                <constraint firstItem="hJd-Af-9uk" firstAttribute="leading" secondItem="LLg-vO-rkz" secondAttribute="leading" id="hvU-aL-soQ"/>
+                <constraint firstItem="gaD-65-KOj" firstAttribute="top" secondItem="gFL-ip-06M" secondAttribute="bottom" constant="16" id="l8f-xQ-luU"/>
+                <constraint firstItem="gFL-ip-06M" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="145" id="yfs-ip-6uQ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+</document>
