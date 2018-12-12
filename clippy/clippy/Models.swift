@@ -8,7 +8,11 @@
 
 import Foundation
 
+//Models for use by JSON decoder and across the app for fetching new content.
+
 struct User: Decodable {
+    
+    //The current logged in user
     static var user: User!
     
     let id: Int

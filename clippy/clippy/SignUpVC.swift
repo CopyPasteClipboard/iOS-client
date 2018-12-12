@@ -11,21 +11,24 @@ import UIKit
 
 class SignUpVC: UIViewController {
     
+    //IBOutlets//
     
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var phoneNumberField: UITextField!
     @IBOutlet weak var signUpBtn: UIButton!
     
-    
     override func viewDidLoad() {
+        //Style
         signUpBtn.layer.borderWidth = 1
         signUpBtn.layer.cornerRadius = 5
         signUpBtn.layer.borderColor = self.view.tintColor.cgColor
         
+        //Nav Title
         self.title = "Sign up"
     }
     
+    //Process user input and sign up if valid content exists
     @IBAction func tappedSignUp() {
         let username = (usernameField.text ?? " ").trimmingCharacters(in: .whitespaces)
         let password = (passwordField.text ?? " ").trimmingCharacters(in: .whitespaces)
